@@ -6,9 +6,9 @@
             </button>
         </h2>
         <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Hobby yang saya sukai di bidang olahraga itu <code> bermain sepak bola</code> salah satu aktifitas untuk melepas penat sekaligus menjaga kebugaran.
-                Di sela waktu luang, Saya juga suka <code>membaca buku</code> untuk menambah wawasan dan membuka pola pikir. Dan
-                Malam harinya, Saya menghabiskan waktu dengan <code>bermain game,</code> untuk mengibur diri dan menikmati kesenangan hidup melalui permainan yang seru dan mengasikkan dan juga melatih kerja sama dalam tim.</div>
+            <div class="accordion-body">Hobby yang saya sukai di bidang olahraga itu <i> bermain sepak bola</i> salah satu aktifitas untuk melepas penat sekaligus menjaga kebugaran.
+                Di sela waktu luang, Saya juga suka <i>membaca buku</i> untuk menambah wawasan dan membuka pola pikir. Dan
+                Malam harinya, Saya menghabiskan waktu dengan <i>bermain game,</i> untuk mengibur diri dan menikmati kesenangan hidup melalui permainan yang seru dan mengasikkan dan juga melatih kerja sama dalam tim.</div>
         </div>
     </div>
     <div class="accordion-item">
@@ -18,10 +18,10 @@
             </button>
         </h2>
         <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Menu favorit saya yaitu <code>sambal kentang, sambal terong, dan ayam bakar.</code>
+            <div class="accordion-body">Menu favorit saya yaitu <i>sambal kentang, sambal terong, dan ayam bakar.</i>
                 sambal kentang Rasanya pedas, gurih, kadang ada manisnya juga sering banget jadi lauk pendamping nasi,Teksturnya lembut banget,sambal terong Teksturnya lembut banget terus nyerap bumbu jadi makin mantap Pedasnya juga bikin nagih
                 Ayam bakar rasanya gurih, manis, dan sedikit pedas, dengan aroma yang menggoda. Dagingnya empuk dan juicy, dengan bumbu yang meresap hingga ke dalam.
-                Semua itu semakin nikmat apabila ditemani segelas <code>es teh manis</code> yang menyegarkan. Bagi saya, menu ini bukan cuma makanan,
+                Semua itu semakin nikmat apabila ditemani segelas <i>es teh manis</i> yang menyegarkan. Bagi saya, menu ini bukan cuma makanan,
                 tapi juga sumber kenyamanan.</div>
         </div>
     </div>
