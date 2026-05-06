@@ -2,6 +2,15 @@
 require_once '../koneksi.php';
 require_once '../models/Level.php';
 
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+if (!isset($_SESSION['user']) || (($_SESSION['role'] ?? '') !== 'admin' && $_SESSION['user'] !== 'admin')) {
+    header("Location: ../index.php?hal=level&error=forbidden");
+    exit;
+}
+
 $obj = new Level();
 
 if (isset($_GET['hapus'])) {

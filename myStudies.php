@@ -1,4 +1,10 @@
 <?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+$isAdmin = isset($_SESSION['user']) && (($_SESSION['role'] ?? '') === 'admin' || $_SESSION['user'] === 'admin');
+
 require_once 'models/Studies.php';
 
 $obj = new Studies();
@@ -9,7 +15,9 @@ $data_studies = $obj->index();
     <h3>Data Studies</h3>
     <hr>
 
-    <a href="index.php?hal=form_studies" class="btn btn-primary mb-3">Tambah</a>
+    <?php if ($isAdmin): ?>
+        <a href="index.php?hal=form_studies" class="btn btn-primary mb-3">Tambah</a>
+    <?php endif; ?>
 
     <table class="table table-striped table-hover">
         <thead>
@@ -43,18 +51,20 @@ $data_studies = $obj->index();
                             <i class="bi bi-eye"></i>
                         </a>
 
-                        <!-- ✏️ edit -->
-                        <a href="index.php?hal=form_studies&id=<?= $row['id'] ?>"
-                            class="btn btn-warning btn-sm">
-                            <i class="bi bi-pencil"></i>
-                        </a>
+                        <?php if ($isAdmin): ?>
+                            <!--  edit -->
+                            <a href="index.php?hal=form_studies&id=<?= $row['id'] ?>"
+                                class="btn btn-warning btn-sm">
+                                <i class="bi bi-pencil"></i>
+                            </a>
 
-                        <!-- 🗑 hapus -->
-                        <a href="controller/proses_studies.php?hapus=<?= $row['id'] ?>"
-                            onclick="return confirm('Yakin hapus data?')"
-                            class="btn btn-danger btn-sm">
-                            <i class="bi bi-trash"></i>
-                        </a>
+                            <!--  hapus -->
+                            <a href="controller/proses_studies.php?hapus=<?= $row['id'] ?>"
+                                onclick="return confirm('Yakin hapus data?')"
+                                class="btn btn-danger btn-sm">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        <?php endif; ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

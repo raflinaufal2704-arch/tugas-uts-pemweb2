@@ -1,4 +1,10 @@
 <?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+$isAdmin = isset($_SESSION['user']) && (($_SESSION['role'] ?? '') === 'admin' || $_SESSION['user'] === 'admin');
+
 require_once 'models/Level.php';
 
 $obj = new Level();
@@ -9,7 +15,9 @@ $data_level = $obj->index();
     <h3>Data Level</h3>
 
     <!-- tombol tambah -->
-    <a href="index.php?hal=form_level" class="btn btn-primary">Tambah</a>
+    <?php if ($isAdmin): ?>
+        <a href="index.php?hal=form_level" class="btn btn-primary">Tambah</a>
+    <?php endif; ?>
 
     <table class="table table-striped table-hover">
         <thead>
@@ -28,17 +36,19 @@ $data_level = $obj->index();
                     <td>
 
                         <!-- EDIT -->
-                        <a href="index.php?hal=form_level&id=<?= $row['id'] ?>"
-                            class="btn btn-warning btn-sm">
-                            <i class="bi bi-pencil"></i>
-                        </a>
+                        <?php if ($isAdmin): ?>
+                            <a href="index.php?hal=form_level&id=<?= $row['id'] ?>"
+                                class="btn btn-warning btn-sm">
+                                <i class="bi bi-pencil"></i>
+                            </a>
 
-                        <!-- HAPUS -->
-                        <a href="controller/proses_level.php?hapus=<?= $row['id'] ?>"
-                            onclick="return confirm('Yakin hapus data?')"
-                            class="btn btn-danger btn-sm">
-                            <i class="bi bi-trash"></i>
-                        </a>
+                            <!-- HAPUS -->
+                            <a href="controller/proses_level.php?hapus=<?= $row['id'] ?>"
+                                onclick="return confirm('Yakin hapus data?')"
+                                class="btn btn-danger btn-sm">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        <?php endif; ?>
 
                     </td>
                 </tr>

@@ -1,7 +1,7 @@
 <div class="card mb-3" style="max-width: 1140px;">
     <div class="row g-0">
         <div class="col-md-2">
-            <img src="images/rafli.jpg" class="img-fluid rounded-start" alt="gambar">
+            <img src="images/rafli.jpeg" class="img-fluid rounded-start" alt="gambar">
         </div>
         <div class="col-md-8">
             <div class="card-body">

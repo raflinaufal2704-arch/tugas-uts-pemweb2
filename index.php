@@ -9,7 +9,11 @@ session_start();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
@@ -48,6 +52,10 @@ session_start();
 
             <div class="col-md-9">
                 <?php
+                if (isset($_GET['error']) && $_GET['error'] === 'forbidden') {
+                    echo '<div class="alert alert-danger">Akses ditolak. Hanya admin yang dapat melakukan pengeditan.</div>';
+                }
+
                 if (isset($_GET['hal'])) {
                     $req = $_GET['hal'];
 

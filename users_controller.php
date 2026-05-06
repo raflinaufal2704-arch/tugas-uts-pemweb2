@@ -11,8 +11,9 @@ $data = [$username, $password];
 
 $user = $obj->cekLogin($data);
 
-if($user){
+if ($user) {
     $_SESSION['user'] = $user['username'];
+    $_SESSION['role'] = $user['role'] ?? null;
     header("Location: index.php");
     exit;
 } else {

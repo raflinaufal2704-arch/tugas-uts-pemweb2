@@ -1,4 +1,14 @@
 <?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+$isAdmin = isset($_SESSION['user']) && (($_SESSION['role'] ?? '') === 'admin' || $_SESSION['user'] === 'admin');
+if (!$isAdmin) {
+    echo '<div class="container mt-3"><div class="alert alert-danger">Akses ditolak. Hanya admin yang dapat melakukan pengeditan.</div></div>';
+    return;
+}
+
 require_once 'models/Level.php';
 
 $obj = new Level();
