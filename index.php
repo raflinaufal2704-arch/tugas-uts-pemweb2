@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+// Cek akses ke mystudies - harus login
+if (isset($_GET['hal']) && $_GET['hal'] === 'mystudies' && !isset($_SESSION['user'])) {
+    header('Location: index.php?hal=login');
+    exit();
+}
 ?>
 
 <!doctype html>

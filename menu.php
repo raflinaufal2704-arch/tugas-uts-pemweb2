@@ -29,16 +29,18 @@
                     <a class="nav-link" href="index.php?hal=contact">Contact</a>
                 </li>
 
-                <!-- DROPDOWN STUDIES -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                        My Studies
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="index.php?hal=level">Level</a></li>
-                        <li><a class="dropdown-item" href="index.php?hal=mystudies">Studies</a></li>
-                    </ul>
-                </li>
+                <!-- DROPDOWN STUDIES - ONLY WHEN LOGGED IN -->
+                <?php if (isset($_SESSION['user'])): ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            My Studies
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.php?hal=level">Level</a></li>
+                            <li><a class="dropdown-item" href="index.php?hal=mystudies">Studies</a></li>
+                        </ul>
+                    </li>
+                <?php endif; ?>
 
             </ul>
 
