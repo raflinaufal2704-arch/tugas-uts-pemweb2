@@ -3,7 +3,7 @@
 
         <!-- LOGO -->
         <a class="navbar-brand" href="index.php">
-            <img src="images/logo.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+            <img src="images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
             My Portfolio
         </a>
 
