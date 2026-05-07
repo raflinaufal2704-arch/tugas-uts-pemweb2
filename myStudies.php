@@ -26,6 +26,7 @@ $data_studies = $obj->index();
                 <th>NAMA SEKOLAH</th>
                 <th>LEVEL</th>
                 <th>TAHUN</th>
+                <th>KETERANGAN</th>
                 <th>FOTO</th>
                 <th>ACTION</th>
             </tr>
@@ -38,7 +39,8 @@ $data_studies = $obj->index();
                     <td><?= $no++ ?></td>
                     <td><?= $row['nama'] ?></td>
                     <td><?= $row['nama_level'] ?></td>
-                    <td><?= $row['tahun_lulus'] ?></td>
+                    <td><?= $row['tahun_lulus'] ?: '-' ?></td>
+                    <td><?= $row['keterangan'] ?></td>
 
                     <td>
                         <img src="images/<?= $row['foto_sekolah'] ?>" width="70">

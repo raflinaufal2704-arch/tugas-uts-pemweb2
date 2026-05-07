@@ -69,9 +69,9 @@ function val(array $row, string $key)
 
             <!-- 4. TAHUN -->
             <div class="form-floating mb-3">
-                <input type="number" name="tahun_lulus" class="form-control"
+                <input type="text" name="tahun_lulus" class="form-control"
                     value="<?= val($row, 'tahun_lulus') ?>"
-                    placeholder="Tahun Lulus" required>
+                    placeholder="Tahun Lulus (gunakan - jika belum lulus)" required>
                 <label>Tahun Lulus</label>
             </div>
 
